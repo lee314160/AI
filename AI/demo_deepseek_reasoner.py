@@ -8,6 +8,7 @@ content_question = "我有100万，计划投资商品期货中的豆油，帮我
 content_question = "太原杏花岭区，家住小东门街，小学上公立还是私立"
 content_question = "太原杏岭实验学校，这所私立学校怎么样"
 content_question = "想从零开始成为一名算法工程师"
+content_question = "讲一下CPU和GPU的区别，以及为什么大模型训练依赖GPU而不是CPU；解释大模型训练的数据如何存储"
 
 
 try:
