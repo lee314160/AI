@@ -1,0 +1,108 @@
+时间复杂度 $O$ （大 $O$ 表示法）是算法分析中用于描述算法运行时间随输入规模增长而增长的渐进上界的一种数学表示方法。它帮助我们在不考虑具体计算机硬件和编程语言差异的情况下，从宏观上评估算法的效率，以下为你详细介绍相关内容：
+
+### 基本概念
+大 $O$ 表示法描述的是算法在最坏情况下的时间复杂度，也就是当输入规模 $n$ 趋向于无穷大时，算法执行时间的增长趋势。它忽略了常数因子和低阶项，因为当输入规模足够大时，这些因素对算法执行时间的影响相对较小。
+
+### 常见时间复杂度分析
+#### 1. $O(1)$：常数时间复杂度
+- **含义**：表示算法的执行时间不随输入规模 $n$ 的变化而变化，无论输入数据的规模有多大，算法都能在固定的时间内完成。
+- **示例**：访问数组中指定索引位置的元素。
+```python
+arr = [1, 2, 3, 4, 5]
+print(arr[2])  # 无论数组 arr 有多长，访问第 3 个元素的时间都是固定的
+```
+
+#### 2. $O(log n)$：对数时间复杂度
+- **含义**：算法的执行时间随输入规模 $n$ 的对数增长而增长。通常出现在使用分治策略的算法中，每次操作都能将问题规模大致缩小一半。
+- **示例**：二分查找算法。
+```python
+def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
+
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(binary_search(arr, 5))
+```
+
+#### 3. $O(n)$：线性时间复杂度
+- **含义**：算法的执行时间与输入规模 $n$ 成正比，即输入规模增大一倍，算法的执行时间也大致增大一倍。
+- **示例**：遍历数组并打印每个元素。
+```python
+arr = [1, 2, 3, 4, 5]
+for num in arr:
+    print(num)
+```
+
+#### 4. $O(n log n)$：线性对数时间复杂度
+- **含义**：算法的执行时间是输入规模 $n$ 与 $log n$ 的乘积。许多高效的排序算法（如快速排序、归并排序）都具有这种时间复杂度。
+- **示例**：归并排序算法。
+```python
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left_half = arr[:mid]
+    right_half = arr[mid:]
+    left_half = merge_sort(left_half)
+    right_half = merge_sort(right_half)
+    return merge(left_half, right_half)
+
+def merge(left, right):
+    result = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+
+arr = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+print(merge_sort(arr))
+```
+
+#### 5. $O(n^2)$：平方时间复杂度
+- **含义**：算法的执行时间与输入规模 $n$ 的平方成正比，通常出现在嵌套循环的算法中。
+- **示例**：冒泡排序算法。
+```python
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+
+arr = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+print(bubble_sort(arr))
+```
+
+#### 6. $O(2^n)$：指数时间复杂度
+- **含义**：算法的执行时间随输入规模 $n$ 的指数增长而增长，这种算法的效率非常低，当输入规模较大时，运行时间会急剧增加。
+- **示例**：计算斐波那契数列的递归实现。
+```python
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+print(fibonacci(5))
+```
+
+### 时间复杂度的比较
+不同时间复杂度的算法在效率上有很大差异，一般来说，时间复杂度的增长趋势从低到高依次为：
+$O(1) < O(log n) < O(n) < O(n log n) < O(n^2) < O(2^n)$
+
+在设计算法时，我们通常希望选择时间复杂度较低的算法，以提高算法的执行效率。

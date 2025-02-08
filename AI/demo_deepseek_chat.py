@@ -4,7 +4,7 @@
 
 from openai import OpenAI, APIError, AuthenticationError, Timeout, APIConnectionError
 
-content_question = "想从零开始成为一名算法工程师"
+content_question = "太原杏岭实验学校，这所私立学校怎么样"
 
 try:
 
@@ -36,7 +36,7 @@ content_answer = response.choices[0].message.content
 
 try:
     # 以写入模式打开文件，如果文件不存在则创建它
-    with open('问答_chat.txt', 'w', encoding='utf-8') as file:
+    with open('问答_chat.txt', 'a', encoding='utf-8') as file:
         # 将内容写入文件
         file.write(f"问题：{content_question}\n")
         file.write(f"回答：{content_answer}\n")
