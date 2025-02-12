@@ -4,7 +4,7 @@
 
 from openai import OpenAI, APIError, AuthenticationError, Timeout, APIConnectionError
 
-content_question = "太原杏岭实验学校，这所私立学校怎么样"
+content_question = "在DRG2.0政策背景下，血液内科如何扭亏为盈，以及作为一名主治医生在日常工作中的操作建议"
 
 try:
 
