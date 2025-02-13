@@ -11,6 +11,7 @@ content_question = "想从零开始成为一名算法工程师"
 content_question = "讲一下CPU和GPU的区别，以及为什么大模型训练依赖GPU而不是CPU；解释大模型训练的数据如何存储"
 content_question = "在DRG2.0政策背景下，血液内科如何扭亏为盈，以及作为一名主治医生在日常工作中的操作建议"
 content_question = "deepseek在临床医护工作中的应用，分类介绍"
+content_question = "教育的本质是什么，作为父母如何教育子女，从幼儿园，小学，初中，高中以及大学"
 
 
 try:
