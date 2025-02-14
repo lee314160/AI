@@ -4,6 +4,7 @@ import os
 # 定义要打开的网址列表
 urls = [
     "https://www.doubao.com/chat/114020116519170",
+    "https://rewards.bing.com/",
     "https://finance.sina.com.cn/",
     "https://finance.sina.com.cn/futuremarket/",
     "https://finance.sina.com.cn/futures/quotes/I0.shtml",
