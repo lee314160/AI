@@ -5,6 +5,7 @@ import os
 urls = [
     "https://www.doubao.com/chat/114020116519170",
     "https://finance.sina.com.cn/",
+    "https://finance.sina.com.cn/futuremarket/",
     "https://finance.sina.com.cn/futures/quotes/I0.shtml",
     "https://finance.sina.com.cn/futures/quotes/JM0.shtml",
     "https://finance.sina.com.cn/futures/quotes/Y0.shtml",
